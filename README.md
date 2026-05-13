@@ -1,33 +1,48 @@
 # csc449
-Mr coffee coffe maker 
-Your team will have various assignments on each module that relate to the content of the module.
+CSC449 — Mr. Coffee Coffee Maker
+Object-Oriented Analysis & Design in Java
+Solo Brew Team · Anthony Delatorre · National University
 
-Your first step is to organize your team. Next, your team is to identify the domain you would like to focus your Object-Oriented Analysis & Design (Java source code) project from the list below. It is suggested that you pick an application that you will enjoy working with since you’ll be stuck with it for the entire month! Be sure at least one of your teammates has a reasonable understanding of the domain for your project as this person(s) will most likely serve as the  Product Owner (using SCRUM terminology) (or the Subject Matter Expert - SME) for the project. Keep in mind that you can scope your domain to what is commonly referred to as a Minimum Viable Product (MVP) which includes enough functionality to launch a LIVE system (assuming your team would code the entire MVP which your team will NOT be required to do! Your team will code only a portion of the MVP).
+Project Overview
+This project models a Mr. Coffee drip coffee maker as an object-oriented Java software system. It simulates core hardware and software interactions — power management, brew customization, and water level monitoring — using encapsulation, inheritance, and polymorphism.
+ResourceLinkGitHub Repositoryhttps://github.com/MexWhey/csc449Agile Project Boardhttps://github.com/users/MexWhey/projects/1
 
-Keep in mind that your team will implement some Java code for a small, yet reasonable, portion of your MVP domain as part of Week #4’s Final Project Report.
+Project Structure
+csc449/
+├── src/
+│   ├── main/java/com/soloBrew/
+│   │   ├── BrewStrength.java       # Enum: MILD, MEDIUM, STRONG
+│   │   ├── BrewSettings.java       # Brew preferences (strength + cup count)
+│   │   ├── WaterReservoir.java     # Water level tracking and low-water warnings
+│   │   ├── BrewController.java     # Core brewing logic
+│   │   └── CoffeeMaker.java        # Top-level device class
+│   └── test/java/com/soloBrew/
+│       ├── BrewControllerTest.java
+│       └── BrewSettingsTest.java
+├── .github/workflows/ci.yml        # Auto-runs tests on every push
+└── pom.xml                         # Maven build with JUnit 5
 
- Project List (You will select ONE):
+Running the Project
+Prerequisites: Java 17+, Maven
+bash# Clone the repo
+git clone https://github.com/MexWhey/csc449.git
+cd csc449
 
-Point of Sale System as you find in your local grocery store
-A clothes Washing Machine
-A Microwave Oven
-A Kitchen Dishwasher
-A Mr. Coffee Coffee Maker
-A “High End” Refrigerator (Features on a Display Panel for Users)
-A Car’s Audio and Navigation System
-A personal Drone ($500-$1,500 price range such as the Mavic or Mavic Mini)
-A system like eBay or Craigslist
-A domain you choose WITH APPROVAL from your instructor BEFORE Saturday, Week #1
-Room Reservation System for a Hotel
-Airplane seat reservation system
-Movie theater/concert seat reservation system 
-Requirements 
-Each week a Team deliverable document will be due by Sunday, midnight Pacific Time. The total number of points possible to be earned is 100.
+# Run all unit tests
+mvn test
 
-There will be four (4) Weekly Reports (Solutions). Each report is due Sunday night at midnight Pacific Time. Each team will determine how it will collaborate, possibly using Zoom or some other tool(s). You are welcome to email me questions for clarification a few days before each due date but please do not send me a potential solution asking if I can evaluate it ahead of your weekly submission.
+# Or compile and package
+mvn clean package
+Expected output:
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+BUILD SUCCESS
 
-The Weekly Project Deliverables are described in the Week 1, 2, 3, and 4 Sections of this course, and ONE and ONLY ONE TEAM MEMBER will submit the Deliverable Report Document (Word or PDF please) for the team. The same team member may submit the report each week or a different team member may do it.
+Tests also run automatically via GitHub Actions on every push — check the Actions tab to see the latest results.
 
-This is a Team Project; No individual solutions will be accepted!
 
-I am excited and looking forward to your team's project work! Have fun, collaborate effectively, and do your very best!
+Technologies Used
+
+Java 17
+JUnit 5
+Maven
+GitHub Actions (CI/CD)
