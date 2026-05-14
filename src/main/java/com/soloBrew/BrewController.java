@@ -1,4 +1,4 @@
-ackage com.soloBrew;
+package com.soloBrew;
  
 /**
  * Top-level class representing the Mr. Coffee coffee maker device.
